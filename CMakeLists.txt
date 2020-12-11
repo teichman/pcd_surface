@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+project(PCD_SURFACE)
+find_package(PCL 1.3 REQUIRED COMPONENTS common io)
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+add_executable(pcd_write_test pcd_write.cpp)
+target_link_libraries(pcd_write_test ${PCL_LIBRARIES})
+
+
+cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+project(greedy_projection)
+find_package(PCL 1.2 REQUIRED)
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+add_executable (greedy_projection greedy_projection.cpp)
+target_link_libraries (greedy_projection ${PCL_LIBRARIES})
